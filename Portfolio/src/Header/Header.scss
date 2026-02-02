@@ -1,0 +1,35 @@
+.Header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    &__left{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        &__name{
+            font-size: 2vh;
+            font-weight: bold;
+            padding-left: 25vh;
+        }
+    }
+
+    &__right{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        gap: 10vh;
+
+        &__about, &__project, &__contact{
+            font-size: 2vh;
+            cursor: pointer;
+        }
+    }
+}
