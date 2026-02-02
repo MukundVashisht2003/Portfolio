@@ -1,0 +1,33 @@
+.Footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #e0e0e0;
+    &__links{
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+
+        img{
+            width: 2rem;
+            height: 2rem;
+            object-fit: contain;
+            display: block;
+            transition: transform 0.15s ease, opacity 0.15s ease;
+            cursor: pointer;
+        }
+
+        img:hover{
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+    }
+
+    &__copyright{
+        font-size: 0.9rem;
+        color: #666;
+    }
+}
