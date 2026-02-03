@@ -18,6 +18,7 @@ A modern, responsive personal portfolio website built with React 19, TypeScript,
 - [Getting Started](#-getting-started)
 - [Available Scripts](#-available-scripts)
 - [Customization](#-customization)
+- [**Deploying to GitHub Pages**](./DEPLOYMENT.md) 🚀
 
 ---
 
