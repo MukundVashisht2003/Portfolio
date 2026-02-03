@@ -3,13 +3,13 @@ import Data from "../Data/data.json"
 import PdfViewer from "../PdfViewer/PdfViewer"
 import ProjectGrid from "../ProjectGrid/ProjectGrid"
 import WorkExperience from "../WorkExperience/WorkExperience"
-import resumePdf from "../assets/Resume.pdf"
 import "./Main.scss"
 
 export default function Main() {
   const [isPdfViewerOpen, setIsPdfViewerOpen] = useState(false)
 
-  const pdfUrl = resumePdf
+  // Use resume URL from data.json (Google Drive)
+  const pdfUrl = Data.resume
 
   const handleOpenPdfViewer = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
