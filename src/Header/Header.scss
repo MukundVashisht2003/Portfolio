@@ -24,15 +24,15 @@
         }
     }
 
-    &__right{
+    &__right {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
-        gap: 3rem;
+        gap: 2.5rem;
         padding-right: 2rem;
 
-        &__about, &__project, &__contact{
+        &-item {
             font-size: 1.1rem;
             cursor: pointer;
             color: #555;
@@ -75,11 +75,11 @@
         }
 
         &__right {
-            gap: 1.5rem;
+            gap: 1rem;
             padding-right: 0;
 
-            &__about, &__project, &__contact {
-                font-size: 0.9rem;
+            &-item {
+                font-size: 0.85rem;
             }
         }
     }

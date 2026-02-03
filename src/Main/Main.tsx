@@ -3,13 +3,13 @@ import Data from "../Data/data.json"
 import PdfViewer from "../PdfViewer/PdfViewer"
 import ProjectGrid from "../ProjectGrid/ProjectGrid"
 import WorkExperience from "../WorkExperience/WorkExperience"
+import resumePdf from "../assets/Resume.pdf"
 import "./Main.scss"
 
 export default function Main() {
   const [isPdfViewerOpen, setIsPdfViewerOpen] = useState(false)
 
-  // Replace this with your actual PDF URL or path
-  const pdfUrl = "/path-to-your-resume.pdf"
+  const pdfUrl = resumePdf
 
   const handleOpenPdfViewer = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()

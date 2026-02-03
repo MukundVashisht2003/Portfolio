@@ -22,9 +22,10 @@ const Header = () => {
         <div className='Header__left__name'>{Data.name}</div>
       </div>
       <div className="Header__right">
-        <div className='Header__right__about' onClick={() => scrollToSection('about')}>About</div>
-        <div className='Header__right__project' onClick={() => scrollToSection('projects')}>Project</div>
-        <div className='Header__right__contact' onClick={() => scrollToSection('contact')}>Contact</div>
+        <div className='Header__right-item' onClick={() => scrollToSection('about')}>About</div>
+        <div className='Header__right-item' onClick={() => scrollToSection('experience')}>Experience</div>
+        <div className='Header__right-item' onClick={() => scrollToSection('projects')}>Projects</div>
+        <div className='Header__right-item' onClick={() => scrollToSection('contact')}>Contact</div>
       </div>
     </header>
   )
