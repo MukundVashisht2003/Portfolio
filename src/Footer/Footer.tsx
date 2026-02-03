@@ -7,7 +7,7 @@ import data from '../Data/data.json'
 
 const Footer = () => {
   return (
-    <footer className='Footer'>
+    <footer id="contact" className='Footer'>
         <div className="Footer__links">
             <a href={data.socialLinks.github} target="_blank" rel="noopener noreferrer" className="Footer__links__github">
               <img src={githubImg} alt="GitHub" />

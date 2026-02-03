@@ -1,4 +1,8 @@
 /* Global reset and base styles */
+html {
+	scroll-behavior: smooth;
+}
+
 html, body, #root {
 	margin: 0;
 	padding: 0;
