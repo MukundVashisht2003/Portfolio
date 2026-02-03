@@ -19,7 +19,7 @@ const Header = () => {
   return (
     <header className='Header'>
       <div className="Header__left">
-        <div className='Header__left__name'>{Data.name}</div>
+        <div className='Header__left-name'>{Data.name}</div>
       </div>
       <div className="Header__right">
         <div className='Header__right-item' onClick={() => scrollToSection('about')}>About</div>

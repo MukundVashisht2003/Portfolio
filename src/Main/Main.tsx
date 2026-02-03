@@ -36,7 +36,7 @@ export default function Main() {
             >
               Get to know more
             </a>
-            <a href={Data.socialLinks.mail} className="Main__about-button Main__about-button--secondary">Get In Touch</a>
+            <a href="#contact" className="Main__about-button Main__about-button--secondary">Get In Touch</a>
           </div>
         </div>
       </section>
