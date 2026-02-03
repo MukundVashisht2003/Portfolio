@@ -2,19 +2,29 @@ import Data from '../Data/data.json'
 import './Header.scss'
 
 const Header = () => {
-  const handleDivClick = (divName: string) => {
-    console.log(`${divName} clicked`);
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId)
+    if (section) {
+      const headerOffset = 80 // Adjust this value based on your header height
+      const elementPosition = section.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
+    }
   }
 
   return (
-    <header className='Header'> 
+    <header className='Header'>
       <div className="Header__left">
-        <div className='Header__left__name'>{Data.name}</div>   
+        <div className='Header__left__name'>{Data.name}</div>
       </div>
       <div className="Header__right">
-        <div className='Header__right__about' onClick={() => handleDivClick('About')}>About</div>
-        <div className='Header__right__project' onClick={() => handleDivClick('Project')}>Project</div>
-        <div className='Header__right__contact' onClick={() => handleDivClick('Contact')}>Contact</div>
+        <div className='Header__right__about' onClick={() => scrollToSection('about')}>About</div>
+        <div className='Header__right__project' onClick={() => scrollToSection('projects')}>Project</div>
+        <div className='Header__right__contact' onClick={() => scrollToSection('contact')}>Contact</div>
       </div>
     </header>
   )
