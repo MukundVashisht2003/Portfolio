@@ -11,6 +11,7 @@ interface Project {
   liveUrl: string
   githubUrl: string
   status: ProjectStatus
+  isCompanyProject?: boolean
 }
 
 const getStatusLabel = (status: ProjectStatus): string => {
@@ -51,22 +52,19 @@ const ProjectGrid = () => {
                 ))}
               </div>
               <div className="ProjectGrid__card-links">
-                <a
-                  href={project.liveUrl}
-                  className="ProjectGrid__card-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View Project
-                </a>
-                <a
-                  href={project.githubUrl}
-                  className="ProjectGrid__card-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  GitHub
-                </a>
+                {!project.isCompanyProject && (
+                  <a
+                    href={project.githubUrl}
+                    className="ProjectGrid__card-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub
+                  </a>
+                )}
+                {project.isCompanyProject && (
+                  <span className="ProjectGrid__card-company">Company Project</span>
+                )}
               </div>
             </div>
           ))}
