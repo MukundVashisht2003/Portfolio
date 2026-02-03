@@ -1,33 +1,108 @@
-.Footer{
+.Footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    padding: 2rem;
-    background-color: #e0e0e0;
-    &__links{
+    padding: 4rem 2rem;
+    background-color: #1a1a2e;
+    color: white;
+
+    &__contact {
+        text-align: center;
+
+        &-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        &-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        &-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        &-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #667eea;
+        }
+
+        &-value {
+            font-size: 1rem;
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: #667eea;
+            }
+        }
+    }
+
+    &__links {
         display: flex;
         flex-direction: row;
         gap: 1.5rem;
 
-        img{
-            width: 2rem;
-            height: 2rem;
-            object-fit: contain;
-            display: block;
-            transition: transform 0.15s ease, opacity 0.15s ease;
-            cursor: pointer;
-        }
+        &-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
 
-        img:hover{
-            transform: scale(1.05);
-            opacity: 0.9;
+            &:hover {
+                background-color: #667eea;
+                transform: translateY(-3px);
+            }
+
+            img {
+                width: 1.5rem;
+                height: 1.5rem;
+                object-fit: contain;
+                display: block;
+                filter: brightness(0) invert(1);
+            }
         }
     }
 
-    &__copyright{
+    &__copyright {
         font-size: 0.9rem;
-        color: #666;
+        color: #888;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
+        max-width: 600px;
+        text-align: center;
+    }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+    .Footer {
+        padding: 3rem 1.5rem;
+
+        &__contact {
+            &-info {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
     }
 }

@@ -1,6 +1,8 @@
 import { useState } from "react"
 import Data from "../Data/data.json"
 import PdfViewer from "../PdfViewer/PdfViewer"
+import ProjectGrid from "../ProjectGrid/ProjectGrid"
+import WorkExperience from "../WorkExperience/WorkExperience"
 import "./Main.scss"
 
 export default function Main() {
@@ -46,62 +48,11 @@ export default function Main() {
         pdfUrl={pdfUrl}
       />
 
+      {/* Work Experience Section */}
+      <WorkExperience />
+
       {/* Projects Section */}
-      <section id="projects" className="Main__projects">
-        <div className="Main__projects-content">
-          <h2 className="Main__projects-title">Projects</h2>
-          <div className="Main__projects-grid">
-            {/* Project cards will go here */}
-            <div className="Main__projects-card">
-              <h3 className="Main__projects-card-title">Project 1</h3>
-              <p className="Main__projects-card-description">
-                Description of your first project. Add details about technologies used and what you built.
-              </p>
-              <div className="Main__projects-card-tags">
-                <span className="Main__projects-card-tag">React</span>
-                <span className="Main__projects-card-tag">TypeScript</span>
-                <span className="Main__projects-card-tag">SCSS</span>
-              </div>
-              <div className="Main__projects-card-links">
-                <a href="#" className="Main__projects-card-link">View Project</a>
-                <a href="#" className="Main__projects-card-link">GitHub</a>
-              </div>
-            </div>
-
-            <div className="Main__projects-card">
-              <h3 className="Main__projects-card-title">Project 2</h3>
-              <p className="Main__projects-card-description">
-                Description of your second project. Highlight key features and your role.
-              </p>
-              <div className="Main__projects-card-tags">
-                <span className="Main__projects-card-tag">Node.js</span>
-                <span className="Main__projects-card-tag">Express</span>
-                <span className="Main__projects-card-tag">MongoDB</span>
-              </div>
-              <div className="Main__projects-card-links">
-                <a href="#" className="Main__projects-card-link">View Project</a>
-                <a href="#" className="Main__projects-card-link">GitHub</a>
-              </div>
-            </div>
-
-            <div className="Main__projects-card">
-              <h3 className="Main__projects-card-title">Project 3</h3>
-              <p className="Main__projects-card-description">
-                Description of your third project. Explain the problem it solves.
-              </p>
-              <div className="Main__projects-card-tags">
-                <span className="Main__projects-card-tag">Python</span>
-                <span className="Main__projects-card-tag">Django</span>
-                <span className="Main__projects-card-tag">PostgreSQL</span>
-              </div>
-              <div className="Main__projects-card-links">
-                <a href="#" className="Main__projects-card-link">View Project</a>
-                <a href="#" className="Main__projects-card-link">GitHub</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ProjectGrid />
     </main>
   )
 }

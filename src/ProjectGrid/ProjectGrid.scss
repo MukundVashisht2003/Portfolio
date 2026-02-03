@@ -1,0 +1,140 @@
+.ProjectGrid {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background-color: #f8f9fa;
+
+  &__content {
+    max-width: 1200px;
+    width: 100%;
+  }
+
+  &__title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #333;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  &__card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-top: 4px solid transparent;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    // Card status modifiers
+    &--completed {
+      border-top-color: #28a745;
+    }
+
+    &--in-development {
+      border-top-color: #ffc107;
+    }
+
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    &-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #333;
+      margin: 0;
+    }
+
+    &-status {
+      padding: 0.3rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+
+      &--completed {
+        background-color: #d4edda;
+        color: #155724;
+      }
+
+      &--in-development {
+        background-color: #fff3cd;
+        color: #856404;
+      }
+    }
+
+    &-description {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+
+    &-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    &-tag {
+      padding: 0.4rem 0.8rem;
+      background-color: #e9ecef;
+      color: #495057;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    &-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    &-link {
+      padding: 0.6rem 1.2rem;
+      background-color: #667eea;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: #764ba2;
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .ProjectGrid {
+    padding: 3rem 1.5rem;
+
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
