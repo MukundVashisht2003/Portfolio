@@ -1,5 +1,7 @@
 # Portfolio Website
 
+> 🚀 **Ready to deploy?** See [DEPLOYMENT.md](./DEPLOYMENT.md) for hosting on GitHub Pages with private data.
+
 A modern, responsive personal portfolio website built with React 19, TypeScript, and Vite. This project showcases work experience, projects, and contact information with a clean, professional design.
 
 ![React](https://img.shields.io/badge/React-19.2.0-61DAFB?logo=react)
