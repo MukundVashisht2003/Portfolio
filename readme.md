@@ -65,7 +65,6 @@ src/
 ├── index.css             # Base CSS reset/styles
 │
 ├── assets/               # Static assets (images, PDFs, icons)
-│   ├── Resume.pdf
 │   ├── github-sign.png
 │   ├── linkedin.png
 │   └── ...
@@ -167,7 +166,7 @@ data.json ──────┬──────► App.tsx (name for title)
                 │
                 ├──────► Header.tsx (name)
                 │
-                ├──────► Main.tsx (name, title, description)
+                ├──────► Main.tsx (name, title, description, resume)
                 │
                 ├──────► WorkExperience.tsx (workExperience[])
                 │
@@ -189,6 +188,7 @@ interface PortfolioData {
   name: string
   title: string
   description: string
+  resume: string                // Google Drive or direct PDF URL
   socialLinks: SocialLinks
   contact: Contact
   workExperience: Experience[]
@@ -225,6 +225,7 @@ interface Project {
   liveUrl: string
   githubUrl: string
   status: 'completed' | 'in-development'
+  isCompanyProject?: boolean    // If true, hides GitHub button
 }
 ```
 
@@ -235,6 +236,7 @@ interface Project {
   "name": "string",           // Your full name
   "title": "string",          // Professional title (e.g., "Full Stack Developer")
   "description": "string",    // Brief bio/description
+  "resume": "string",         // Resume URL (Google Drive preview or direct PDF)
 
   "socialLinks": {
     "github": "string",       // GitHub profile URL
@@ -268,7 +270,8 @@ interface Project {
       "tags": ["string"],       // Technology tags
       "liveUrl": "string",      // Live demo URL (use "#" if not available)
       "githubUrl": "string",    // GitHub repository URL
-      "status": "string"        // "completed" | "in-development"
+      "status": "string",       // "completed" | "in-development"
+      "isCompanyProject": "boolean" // Optional: if true, hides GitHub button
     }
   ]
 }
@@ -281,6 +284,7 @@ interface Project {
   "name": "John Doe",
   "title": "Full Stack Developer",
   "description": "Passionate developer with 5+ years of experience...",
+  "resume": "https://drive.google.com/file/d/YOUR_FILE_ID/preview",
   
   "socialLinks": {
     "github": "https://github.com/johndoe",
@@ -315,6 +319,16 @@ interface Project {
       "liveUrl": "https://myproject.com",
       "githubUrl": "https://github.com/johndoe/ecommerce",
       "status": "completed"
+    },
+    {
+      "id": 2,
+      "title": "Internal Dashboard",
+      "description": "Company internal analytics tool...",
+      "tags": ["React", "TypeScript", "Zustand"],
+      "liveUrl": "#",
+      "githubUrl": "#",
+      "status": "completed",
+      "isCompanyProject": true
     }
   ]
 }
@@ -344,7 +358,7 @@ interface Project {
 
 3. **Configure your data**
    - Edit `src/Data/data.json` with your personal information
-   - Add your resume PDF to `src/assets/Resume.pdf`
+   - Add resume URL (Google Drive or direct link) to the `resume` field
    - Update social media icons in `src/assets/`
 
 4. **Start the development server**
@@ -389,6 +403,16 @@ Each component has its own SCSS file following the BEM naming convention:
 
 Global CSS variables can be defined in `src/index.css`. Modify these to change the color scheme.
 
+### Company Projects
+
+To mark a project as a company project (hides GitHub button):
+```json
+{
+  "title": "Internal Tool",
+  "isCompanyProject": true
+}
+```
+
 ---
 
 ## 📄 License
@@ -404,3 +428,4 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 ---
 
 **Built with ❤️ using React, TypeScript, and Vite**
+```
